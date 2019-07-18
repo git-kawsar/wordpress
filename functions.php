@@ -11,6 +11,10 @@
     add_theme_support('custom-header', array(
       'default-text-color' => '#c0000', // get_header_textcolor();
       'header-text' => true // if(!display_header_text()){ echo "display: none;"; }
+      'width' => '1200',
+      'height' => '500',
+      'flex-heitht' => false,
+      'flex-width' => false
     )); // header_image();
     add_theme_support('custom-logo', array(
       'width' => '100',
