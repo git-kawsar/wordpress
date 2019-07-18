@@ -20,6 +20,7 @@
       'width' => '100',
       'height' => '100'
     )); // the_custom_logo();
+    add_theme_support('custom-background');
   }
   add_action('after_setup_theme', 'my_functin');
 
