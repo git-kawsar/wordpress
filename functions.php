@@ -40,7 +40,7 @@
 
 /*
 ==================================================================================================================
-                                            Add Css class to li item 
+                                            Add Css class to li & link item
 ==================================================================================================================
 */
   function alfa_nav_menu_css_class($class, $item){
@@ -49,5 +49,8 @@
   }
   add_filter('nav_menu_css_class', 'alfa_nav_menu_css_class', 10, 2);
 
-
-
+  function add_class_to_all_menu_anchors( $atts ) {
+      $atts['class'] = 'custom-class';
+      return $atts;
+  }
+  add_filter( 'nav_menu_link_attributes', 'add_class_to_all_menu_anchors', 10 );
