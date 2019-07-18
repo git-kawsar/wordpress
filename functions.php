@@ -38,7 +38,16 @@
   }
   add_filter('the_excerpt', 'alfa_the_excerpt');
 
-
+/*
+==================================================================================================================
+                                            Add Css class to li item 
+==================================================================================================================
+*/
+  function alfa_nav_menu_css_class($class, $item){
+      $class[] = 'list-inline-item';
+      return $class;
+  }
+  add_filter('nav_menu_css_class', 'alfa_nav_menu_css_class', 10, 2);
 
 
 
