@@ -6,6 +6,6 @@
 		'date' => $prefix_date
 	));
 	// than set your $data to your js file
-	'date' => $data.date
+	'date' => $data.date,
 	
 	
