@@ -1,0 +1,97 @@
+{
+	// Place your snippets for php here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	//php block:
+	"php block": {
+		"prefix": "php",
+		"body": [
+			"<?php",
+			"$1",
+			"?>"
+		],
+		"description": "PHP Block"
+	},
+	//Print_r:
+	"print r": {
+		"prefix": "pr",
+		"body": [
+			"echo '<pre>';",
+			"print_r( $1 );",
+			"echo '</pre>';"
+		],
+		"description": "Print"
+	},
+	//Load Plugin Assets:
+	"Assets": {
+		"prefix": "assets",
+		"body": [
+			"function $1(){",
+			"\twp_enqueue_style('$2', get_theme_file_uri('/assets/'));\n",
+			"\twp_enqueue_script('$3', get_theme_file_uri('/assets/'), $4, 'version', true);",
+			"}",
+			"add_action('wp_enqueue_scripts', '$1');"
+		],
+		"description": "Plugin Assests"
+	},
+	// Plugin Supports
+	"Plugin Support": {
+		"prefix": "support",
+		"body": [
+			"function $1(){",
+			"\tload_theme_textdomain('$2', get_theme_file_path('/$3'));",
+			"\tadd_theme_support('title-tag');",
+			"\tadd_theme_support('post-thumbnails');",
+			"\tadd_theme_support('post-formats', array(",
+			"\t\t'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'",
+			"\t));",
+			"\tadd_theme_support('html5', array(\n",
+			"\t\t'comment-list', 'comment-form', 'search-form'",
+			"\t));",
+			"\tadd_theme_support('custom-logo');",
+			"\tadd_theme_support('custom-header');",
+			"\tadd_theme_support('custom-background');",
+			"}",
+			"add_action('after_setup_theme', '$1');"
+		],
+		"description": "Plugin Support"
+	},
+	//
+	"Post ID": {
+		"prefix": "post_id",
+		"body": [
+			"$$1 = null;",
+			"if( isset( $$_REQUEST['post'] ) || isset( $$_REQUEST['post_ID'] ) ){",
+			"\t$$1 = empty( $$_REQUEST['post_ID']) ? $$_REQUEST['post'] : $$_REQUEST['post_ID'];",
+			"}"
+		],
+		"description": "Admin Panel Post ID"
+	},
+	"Plugin Defination": {
+		"prefix": "plugin_defination",
+		"body": [
+			"/*",
+			"Plugin Name: Plugin_name",
+			"Plugin URI: Thume_URL",
+			"Author: author_name",
+			"Author URI: Author_URI",
+			"Description: Some_description",
+			"Version: Version",
+			"Text Domain: Textdomain",
+			"Plugin Path: Path_of_TextDomain",
+			"*/",
+		],
+		"description": "Plugin Definations"
+	}
+}
